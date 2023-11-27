@@ -58,7 +58,7 @@ public class Enemy {
         }
     }
 
-     // getterとsetterメソッド
+    // getterとsetterメソッド
      public String getName() {
         return name;
     }
