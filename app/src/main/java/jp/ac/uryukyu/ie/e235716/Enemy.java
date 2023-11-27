@@ -34,9 +34,15 @@ public class Enemy {
      * @param hero 攻撃対象
      */
     public void attack(Hero hero){
-        int damage = (int)(Math.random() * attack);
-        System.out.printf("%sの攻撃！%sに%dのダメージを与えた！！\n", name, hero.name, damage);
-        hero.wounded(damage);
+        if( hitPoint > 0 ){
+            int damage = (int)(Math.random() * attack);
+            System.out.printf("%sの攻撃！%sに%dのダメージを与えた！！\n", name, hero.getName(), damage);
+            hero.wounded(damage);
+        }else{
+            int noDamage = 0;
+            System.out.println("モンスターは力尽きた");
+            hero.wounded(noDamage);
+        }
     }
 
     /**
@@ -51,5 +57,23 @@ public class Enemy {
             System.out.printf("モンスター%sは倒れた。\n", name);
         }
     }
+
+     // getterとsetterメソッド
+     public String getName() {
+        return name;
+    }
+
+    public int getHitPoint() {
+        return hitPoint;
+    }
+
+    public int getAttack() {
+        return attack;
+    }
+
+    public boolean isDead() {
+        return dead;
+    }
+
 
 }

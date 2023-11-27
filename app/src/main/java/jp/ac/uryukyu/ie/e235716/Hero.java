@@ -51,4 +51,21 @@ public class Hero {
             System.out.printf("勇者%sは道半ばで力尽きてしまった。\n", name);
         }
     }
+
+    // getterとsetterメソッド
+    public String getName() {
+        return name;
+    }
+
+    public int getHitPoint() {
+        return hitPoint;
+    }
+
+    public int getAttack() {
+        return attack;
+    }
+
+    public boolean isDead() {
+        return dead;
+    }
 }
